@@ -10,9 +10,11 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 'ping') {
+    console.log(msg.content)
+    if(msg.content.indexOf('<@!') != -1 && msg.content.indexOf('>') != -1)
+    if (msg.content === 'ping') {
     msg.channel.send('pong');
-  }
+     }
 });
 
 client.login(logins.token);
