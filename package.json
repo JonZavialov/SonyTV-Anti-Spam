@@ -1,0 +1,22 @@
+{
+  "name": "sonytv-anti-spam",
+  "version": "1.0.0",
+  "description": "A custom moderation discord bot which prevents spam such as mass pings, text walling, etc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SonyTV-Bryson/SonyTV-Anti-Spam.git"
+  },
+  "keywords": [
+    "discord"
+  ],
+  "author": "SonyTV-Bryson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SonyTV-Bryson/SonyTV-Anti-Spam/issues"
+  },
+  "homepage": "https://github.com/SonyTV-Bryson/SonyTV-Anti-Spam#readme"
+}
