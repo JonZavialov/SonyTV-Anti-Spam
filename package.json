@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/SonyTV-Bryson/SonyTV-Anti-Spam/issues"
   },
-  "homepage": "https://github.com/SonyTV-Bryson/SonyTV-Anti-Spam#readme"
+  "homepage": "https://github.com/SonyTV-Bryson/SonyTV-Anti-Spam#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3"
+  }
 }
