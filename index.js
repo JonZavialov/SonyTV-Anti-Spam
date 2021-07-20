@@ -15,9 +15,9 @@ client.on('ready', () => {
 
 client.on('message', msg => {
   if(msg.author.id == '866881336106942465') return
-  console.log(msg.author.id)
   if(msg.content.indexOf('<@!') != -1 && msg.content.indexOf('>') != -1){
     pingsArray = handlePing(msg, pingsArray)
+    console.log(pingsArray)
   }
   if (msg.content == 'ping') {
     msg.channel.send('pong')
