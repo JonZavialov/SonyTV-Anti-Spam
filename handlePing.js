@@ -3,7 +3,7 @@
  * @param {*} msg 
  * @param {Array} pingsArray 
  */
-function handlePing(msg, pingsArray){
+function handlePing(msg, pingsArray, timestamp){
     let userDict = {}
     let userList = []
     let hasPinged = false
@@ -33,7 +33,8 @@ function handlePing(msg, pingsArray){
 
     const memberDict = {
         id: msg.author.id,
-        pings: pings
+        pings: pings,
+        timestamp: timestamp
     }
 
     if(hasPinged){
