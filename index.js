@@ -1,12 +1,12 @@
 const handlePing = require('./handlePing.js')
 const cock = require('./commands/cock.js')
 const skin = require('./commands/skin.js')
+const checkForMassPing = require('./checkForMassPing.js')
 
 const Discord = require('discord.js')
 require('discord-reply')
 const client = new Discord.Client()
 const fs = require('fs')
-const fetch = require('node-fetch');
 
 
 let rawdata = fs.readFileSync('./logins.json')
@@ -44,9 +44,13 @@ client.on('message', msg => {
   }
 
   if(msg.content.indexOf('<@!') != -1 && msg.content.indexOf('>') != -1){
-    pingsArray = handlePing(msg, pingsArray, Date.now())
+    handlePing(msg, pingsArray, Date.now())
+    .then(_pingsArray => {
+      pingsArray = _pingsArray
+      pingsArray = checkForMassPing(msg,pingsArray)
+    })
+    .catch(error => {})
   }
-
   console.log(pingsArray)
 });
 

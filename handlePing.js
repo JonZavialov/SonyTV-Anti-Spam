@@ -3,12 +3,13 @@
  * @param {*} msg 
  * @param {Array} pingsArray 
  */
-function handlePing(msg, pingsArray, timestamp){
+async function handlePing(msg, pingsArray, timestamp){
     let userDict = {}
     let userList = []
     let hasPinged = false
     let pings
     let dictLoc
+    let infractions
 
     //pushes the ID of everyone who has pinged previosly to an array
     for(var i = 0; i < pingsArray.length; i++){
@@ -27,14 +28,17 @@ function handlePing(msg, pingsArray, timestamp){
 
     if(hasPinged){
         pings = pingsArray[dictLoc].pings + 1
+        infractions = pingsArray[dictLoc].infractions
     }else{
         pings = 1
+        infractions = 0
     }
 
     const memberDict = {
         id: msg.author.id,
         pings: pings,
-        timestamp: timestamp
+        timestamp: timestamp,
+        infractions: infractions
     }
 
     if(hasPinged){
