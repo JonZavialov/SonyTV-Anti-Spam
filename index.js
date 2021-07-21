@@ -1,10 +1,13 @@
 const handlePing = require('./handlePing.js')
+const cock = require('./commands/cock.js')
+const skin = require('./commands/skin.js')
 
 const Discord = require('discord.js')
 require('discord-reply')
 const client = new Discord.Client()
 const fs = require('fs')
-var gen = require('random-seed').create()
+const fetch = require('node-fetch');
+
 
 let rawdata = fs.readFileSync('./logins.json')
 let logins = JSON.parse(rawdata)
@@ -20,19 +23,11 @@ client.on('message', msg => {
   if(msg.author.id == '866881336106942465') return
 
   if(msg.content == '!cock'){
-    let seed = msg.author.username + msg.author.discriminator
-    let reply
-    gen.seed(seed)
-    let n = gen.intBetween(100, 999)
-    n = n /100
-    if(n < 5){
-      reply = "pathetic. :rofl:"
-    }else if (n < 8){
-      reply = "average. :person_shrugging:"
-    }else{
-      reply = ":scream:"
-    }
-    msg.lineReply(n + " inches, " + reply)
+    cock(msg)
+  }
+
+  if(msg.content.startsWith('!skin ')){
+    skin(msg)
   }
 
   if(msg.reference != null){
