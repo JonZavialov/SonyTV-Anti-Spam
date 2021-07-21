@@ -2,6 +2,7 @@ const handlePing = require('./handlePing.js')
 const cock = require('./commands/cock.js')
 const skin = require('./commands/skin.js')
 const checkForMassPing = require('./checkForMassPing.js')
+const mute = require('./mute.js')
 
 const Discord = require('discord.js')
 require('discord-reply')
@@ -24,6 +25,10 @@ client.on('message', msg => {
 
   if(msg.content == '!cock'){
     cock(msg)
+  }
+
+  if(msg.content == '!mute'){
+    mute(msg.author.id, client)
   }
 
   if(msg.content.startsWith('!skin ')){
