@@ -1,6 +1,7 @@
 const handlePing = require('./handlePing.js')
 
 const Discord = require('discord.js')
+require('discord-reply')
 const client = new Discord.Client()
 const fs = require('fs')
 
@@ -11,16 +12,28 @@ let pingsArray = []
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`)
+  client.user.setActivity('Moderating The Bryson Coalition');
 });
 
 client.on('message', msg => {
   if(msg.author.id == '866881336106942465') return
+
+  if(msg.reference != null){
+    msg.channel.messages.fetch(msg.reference.messageID)
+    .then(message => {
+      if(message.author.id == '866881336106942465'){
+        msg.lineReply('Fan pings :yawning_face: :yawning_face: :yawning_face:')
+      }
+    })
+  }
+
+  if(msg.content.indexOf('<@!866881336106942465>')!=-1){
+    msg.lineReply('Fan pings :yawning_face: :yawning_face: :yawning_face:')
+  }
+
   if(msg.content.indexOf('<@!') != -1 && msg.content.indexOf('>') != -1){
     pingsArray = handlePing(msg, pingsArray)
-    console.log(pingsArray)
-  }
-  if (msg.content == 'ping') {
-    msg.channel.send('pong')
+    //console.log(pingsArray)
   }
 });
 

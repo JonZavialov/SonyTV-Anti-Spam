@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/SonyTV-Bryson/SonyTV-Anti-Spam#readme",
   "dependencies": {
+    "discord-reply": "^0.1.2",
     "discord.js": "^12.5.3",
     "fs": "0.0.1-security"
   }
