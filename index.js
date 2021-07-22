@@ -31,7 +31,7 @@ client.on('message', msg => {
     mute(msg.author.id, client)
   }
 
-  if(msg.content.startsWith('!skin ')){
+  if(msg.content.startsWith('!skin')){
     skin(msg)
   }
 
@@ -44,7 +44,7 @@ client.on('message', msg => {
     })
   }
 
-  if(msg.content.indexOf('<@!866881336106942465>')!=-1){
+  if(msg.content.indexOf('866881336106942465')!=-1){
     msg.lineReply('Fan pings :yawning_face: :yawning_face: :yawning_face:')
   }
 
@@ -56,7 +56,7 @@ client.on('message', msg => {
     })
     .catch(error => {})
   }
-  console.log(pingsArray)
+  console.log(msg.content)
 });
 
 client.login(logins.token)
