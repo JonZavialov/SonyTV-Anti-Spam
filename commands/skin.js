@@ -1,6 +1,7 @@
 const reqRestAPI = require('../utilities/reqRestAPI.js')
 const handleErrorNoArgs = require('../utilities/error handling/handleErrorNoArgs')
 const handleErrorTooManyArgs = require('../utilities/error handling/handleErrorTooManyArgs')
+const embedMessage = require('../utilities/embedMessage')
 
 /**
  * 
@@ -26,8 +27,11 @@ async function skin(msg){
         return 
     })
     let uuid = json.id
-
-    msg.lineReply('https://crafatar.com/renders/body/' + uuid)
+    
+    let embedTitle = username + "'s Skin"
+    let content = 'https://crafatar.com/renders/body/' + uuid
+    let message = embedMessage(embedTitle,content)
+    msg.lineReply(message)
 }
 
 module.exports = skin
