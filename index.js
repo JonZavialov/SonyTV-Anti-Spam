@@ -3,6 +3,7 @@ const cock = require('./commands/cock.js')
 const skin = require('./commands/skin.js')
 const checkForMassPing = require('./utilities/checkForMassPing.js')
 const mute = require('./utilities/mute.js')
+const affirmation = require('./commands/affirmation')
 
 const Discord = require('discord.js')
 require('discord-reply')
@@ -22,6 +23,10 @@ client.on('ready', () => {
 
 client.on('message', msg => {
   if(msg.author.id == '866881336106942465') return
+
+  if(msg.content == "!affirmation"){
+    affirmation(msg)
+  }
 
   if(msg.content == '!cock'){
     cock(msg)
