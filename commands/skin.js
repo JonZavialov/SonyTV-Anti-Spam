@@ -20,7 +20,11 @@ async function skin(msg){
     let username = msg.content.substring(6,msg.content.length)
     
     let url = "https://api.mojang.com/users/profiles/minecraft/" + username
-    let json = await reqRestAPI(url)    
+    let json = await reqRestAPI(url)
+    .catch(error => {
+        msg.lineReply('No such name!')
+        return 
+    })
     let uuid = json.id
 
     msg.lineReply('https://crafatar.com/renders/body/' + uuid)
