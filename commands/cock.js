@@ -1,5 +1,9 @@
 var gen = require('random-seed').create()
 
+/**
+ * 
+ * @param {*} msg 
+ */
 function cock(msg){
     let seed = msg.author.username + msg.author.discriminator
     let reply

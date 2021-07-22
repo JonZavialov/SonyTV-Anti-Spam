@@ -1,5 +1,9 @@
-const reqRestAPI = require('../reqRestAPI.js')
+const reqRestAPI = require('../utilities/reqRestAPI.js')
 
+/**
+ * 
+ * @param {*} msg 
+ */
 async function skin(msg){
     let username = msg.content.substring(6,msg.content.length)
     

@@ -1,8 +1,8 @@
-const handlePing = require('./handlePing.js')
+const handlePing = require('./utilities/handlePing.js')
 const cock = require('./commands/cock.js')
 const skin = require('./commands/skin.js')
-const checkForMassPing = require('./checkForMassPing.js')
-const mute = require('./mute.js')
+const checkForMassPing = require('./utilities/checkForMassPing.js')
+const mute = require('./utilities/mute.js')
 
 const Discord = require('discord.js')
 require('discord-reply')

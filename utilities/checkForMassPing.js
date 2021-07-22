@@ -1,3 +1,9 @@
+/**
+ * 
+ * @param {*} msg 
+ * @param {*} pingsArray 
+ * @returns 
+ */
 function checkForMassPing(msg, pingsArray){
     let content = msg.content
     let userDict

@@ -1,5 +1,10 @@
 const fetch = require('node-fetch');
 
+/**
+ * 
+ * @param {*} url 
+ * @returns 
+ */
 async function reqRestAPI(url){
     let settings = { method: "Get" };
 
