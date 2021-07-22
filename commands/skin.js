@@ -27,6 +27,7 @@ async function skin(msg){
         return 
     })
     let uuid = json.id
+    username = json.name
     
     let embedTitle = username + "'s Skin"
     let content = 'https://crafatar.com/renders/body/' + uuid
