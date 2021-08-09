@@ -4,6 +4,7 @@ const skin = require('./commands/skin.js')
 const checkForMassPing = require('./utilities/checkForMassPing.js')
 const mute = require('./utilities/mute.js')
 const affirmation = require('./commands/affirmation')
+const handleDM = require('./utilities/handleDM.js')
 
 const Discord = require('discord.js')
 require('discord-reply')
@@ -23,6 +24,10 @@ client.on('ready', () => {
 
 client.on('message', msg => {
   if(msg.author.id == '866881336106942465') return
+
+  if (msg.channel.type === "dm"){
+    handleDM(msg)
+  }
 
   if(msg.content == "!affirmation"){
     affirmation(msg)
