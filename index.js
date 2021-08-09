@@ -12,7 +12,7 @@ require('discord-reply')
 const client = new Discord.Client()
 const fs = require('fs')
 
-const prefix = "~"
+const prefix = "sony "
 
 
 let rawdata = fs.readFileSync('./logins.json')
