@@ -5,6 +5,7 @@ const checkForMassPing = require('./utilities/checkForMassPing.js')
 const mute = require('./utilities/mute.js')
 const affirmation = require('./commands/affirmation')
 const handleDM = require('./utilities/handleDM.js')
+const vcListen = require('./utilities/vcListen.js')
 
 const Discord = require('discord.js')
 require('discord-reply')
@@ -37,6 +38,11 @@ client.on('message', msg => {
     cock(msg)
   }
 
+  if(msg.content == "!join"){
+    vcListen(msg)
+  }
+  
+
   if(msg.content == '!mute'){
     mute(msg.author.id, client)
   }
@@ -47,6 +53,7 @@ client.on('message', msg => {
 
   if(msg.reference != null){
     msg.channel.messages.fetch(msg.reference.messageID)
+
     .then(message => {
       if(message.author.id == '866881336106942465'){
         msg.lineReply('Fan pings :yawning_face: :yawning_face: :yawning_face:')
