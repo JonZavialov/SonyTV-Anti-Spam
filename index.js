@@ -24,13 +24,13 @@ let pingsArray = []
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`)
   client.user.setActivity('Moderating The Bryson Coalition');
-});
+})
 
 client.on('message', msg => {
   if(msg.author.id == '866881336106942465') return
 
   if (msg.channel.type === "dm"){
-    handleDM(msg)
+    handleDM(msg,client)
   }
 
   if(msg.content == prefix + "affirmation"){
@@ -44,11 +44,23 @@ client.on('message', msg => {
   if(msg.content == prefix + "join"){
     if(!msg.member.voice.channel){
       msg.lineReply("You're not in a voice channel!")
-    }else vcListen(msg)
+    }else{ 
+      vcListen(msg)
+      msg.react('👍')
+    }
+  }
+
+  if(msg.content == prefix + "leave"){
+    if(!msg.guild.me.voice.channel){
+      msg.lineReply('I\'m not in a voice channel!')
+    }else{ 
+      msg.guild.me.voice.channel.leave()
+      msg.react('👍')
+    }
   }
   
   if(msg.content == prefix + "react"){
-    msg.react('😄')
+    msg.react('👍')
   }
 
   if(msg.content == prefix + 'mute'){
@@ -81,7 +93,7 @@ client.on('message', msg => {
     })
     .catch(error => {})
   }
-  console.log(msg.content)
-});
+  //console.log(msg.content)
+})
 
 client.login(logins.token)
