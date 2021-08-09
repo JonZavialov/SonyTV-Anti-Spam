@@ -63,12 +63,14 @@ client.on('message', msg => {
     msg.react('👍')
   }
 
-  if(msg.content == prefix + 'mute'){
-    mute(msg.author.id, client)
+  if(msg.content.startsWith(prefix + 'mute')){
+    mute(msg, client)
+    msg.react('👍')
   }
 
   if(msg.content.startsWith(prefix + 'skin')){
     skin(msg)
+    msg.react('👍')
   }
 
   if(msg.reference != null){

@@ -8,17 +8,17 @@ const embedMessage = require('../utilities/embedMessage')
  * @param {*} msg 
  */
 async function skin(msg){
-    if(msg.content.indexOf(' ') == -1){
+    if((msg.content.match(/ /g) || []).length == 1){
         handleErrorNoArgs(msg, "skin")
         return
     }
 
-    if((msg.content.match(/ /g) || []).length >= 2){
+    if((msg.content.match(/ /g) || []).length >= 3){
         handleErrorTooManyArgs(msg)
         return
     }
     
-    let username = msg.content.substring(6,msg.content.length)
+    let username = msg.content.substring(10,msg.content.length)
     
     let url = "https://api.mojang.com/users/profiles/minecraft/" + username
     let json = await reqRestAPI(url)
