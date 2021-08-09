@@ -1,3 +1,7 @@
+/**
+ * 
+ * @param {*} msg 
+ */
 async function vcListen(msg){
     const connection = await msg.member.voice.channel.join()
 

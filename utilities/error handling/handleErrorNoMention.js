@@ -1,3 +1,7 @@
+/**
+ * 
+ * @param {*} msg 
+ */
 function handleErrorNoMention(msg){
     msg.lineReply('No mention!')
 }

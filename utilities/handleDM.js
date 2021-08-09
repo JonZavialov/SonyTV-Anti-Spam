@@ -1,3 +1,9 @@
+/**
+ * 
+ * @param {*} msg 
+ * @param {*} client 
+ * @returns 
+ */
 function handleDM(msg,client){
     if(msg.content == '1'){
         msg.lineReply('For any assitance, please contact my creator, sonytv#0348')
