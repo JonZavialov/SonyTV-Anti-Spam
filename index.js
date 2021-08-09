@@ -12,6 +12,8 @@ require('discord-reply')
 const client = new Discord.Client()
 const fs = require('fs')
 
+const prefix = "~"
+
 
 let rawdata = fs.readFileSync('./logins.json')
 let logins = JSON.parse(rawdata)
@@ -30,26 +32,29 @@ client.on('message', msg => {
     handleDM(msg)
   }
 
-  if(msg.content == "!affirmation"){
+  if(msg.content == prefix + "affirmation"){
     affirmation(msg)
   }
 
-  if(msg.content == '!cock'){
+  if(msg.content == prefix + 'cock'){
     cock(msg)
   }
 
-  if(msg.content == "!join"){
+  if(msg.content == prefix + "join"){
     if(!msg.member.voice.channel){
       msg.lineReply("You're not in a voice channel!")
     }else vcListen(msg)
   }
   
+  if(msg.content == prefix + "react"){
+    msg.react('😄')
+  }
 
-  if(msg.content == '!mute'){
+  if(msg.content == prefix + 'mute'){
     mute(msg.author.id, client)
   }
 
-  if(msg.content.startsWith('!skin')){
+  if(msg.content.startsWith(prefix + 'skin')){
     skin(msg)
   }
 

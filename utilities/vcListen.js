@@ -9,7 +9,6 @@ async function vcListen(msg){
         else{
             isSpeaking = false
         }
-        console.log(isSpeaking)
     })
 }
 
