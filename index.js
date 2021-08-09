@@ -39,7 +39,9 @@ client.on('message', msg => {
   }
 
   if(msg.content == "!join"){
-    vcListen(msg)
+    if(!msg.member.voice.channel){
+      msg.lineReply("You're not in a voice channel!")
+    }else vcListen(msg)
   }
   
 
