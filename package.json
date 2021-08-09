@@ -24,6 +24,7 @@
     "discord.js": "^12.5.3",
     "fs": "0.0.1-security",
     "node-fetch": "^2.6.1",
+    "node-opus": "^0.3.3",
     "random-seed": "^0.3.0"
   }
 }

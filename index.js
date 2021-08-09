@@ -11,6 +11,7 @@ const Discord = require('discord.js')
 require('discord-reply')
 const client = new Discord.Client()
 const fs = require('fs')
+var opus = require('node-opus');
 
 const prefix = "sony "
 
