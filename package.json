@@ -25,6 +25,7 @@
     "fs": "0.0.1-security",
     "node-fetch": "^2.6.1",
     "node-opus": "^0.3.3",
-    "random-seed": "^0.3.0"
+    "random-seed": "^0.3.0",
+    "spdl-core": "^2.0.2"
   }
 }

@@ -2,11 +2,12 @@ const handlePing = require('./utilities/handlePing.js')
 const cock = require('./commands/cock.js')
 const skin = require('./commands/skin.js')
 const checkForMassPing = require('./utilities/checkForMassPing.js')
-const mute = require('./utilities/mute.js')
+const mute = require('./commands/mute.js')
 const affirmation = require('./commands/affirmation')
 const handleDM = require('./utilities/handleDM.js')
 const vcListen = require('./utilities/vcListen.js')
 const checkForTextWall = require('./utilities/checkForTextWall.js')
+const spotify = require('./commands/spotify')
 
 const Discord = require('discord.js')
 require('discord-reply')
@@ -69,6 +70,10 @@ client.on('message', msg => {
   if(msg.content.startsWith(prefix + 'mute')){
     mute(msg, client)
     msg.react('👍')
+  }
+
+  if(msg.content.startsWith(prefix + 'spotify')){
+    spotify(msg)
   }
 
   if(msg.content.startsWith(prefix + 'skin')){
