@@ -30,7 +30,7 @@ client.on('ready', () => {
 
 client.on('message', msg => {
   if(msg.author.id == '866881336106942465') return
-
+  
   checkForTextWall(msg)
 
   if (msg.channel.type === "dm"){
@@ -103,7 +103,7 @@ client.on('message', msg => {
     })
     .catch(error => {})
   }
-  console.log(pingsArray)
+  //console.log(pingsArray)
   //console.log(msg.content)
 })
 
